@@ -26,7 +26,7 @@ export function TariffGrid(props: IProps) {
     <div className="tariff-grid">
       {tariffs?.map((tariff, index) => (
         <TariffCard
-          best={index === 2}
+          index={index}
           key={tariff.id}
           tariff={tariff}
           period={period}

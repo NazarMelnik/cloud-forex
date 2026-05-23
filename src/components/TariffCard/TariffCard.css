@@ -1,6 +1,9 @@
 .tariff-card {
+  min-height: 614px;
   padding: 22px 16px;
   border-radius: 32px;
+  display: flex;
+  flex-direction: column;
   background: linear-gradient(92.6deg, rgba(190, 78, 255, 0.06) 37.84%, rgba(255, 74, 183, 0.06) 100%);
   border: 1px solid #BE4EFF80;
   color: var(--white);
@@ -146,6 +149,43 @@
   cursor: help;
   opacity: 0.6;
   transition: all 0.3s ease;
+}
+
+.tariff-card__oportunities,
+.tariff-card__relevant {
+  margin-top: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.tariff-card__oportunity-title,
+.tariff-card__relevant-title {
+  text-transform: uppercase;
+  margin-bottom: 4px;
+  font-size: 12px;
+  line-height: 110%;
+  color: #F1EBFE;
+}
+
+.tariff-card__oportunity-item,
+.tariff-card__relevant-item {
+  padding: 6px;
+  border-radius: 8px;
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  background: linear-gradient(90deg, rgba(83, 45, 114, 0.1) 0%, rgba(83, 45, 114, 0.26) 50%, rgba(83, 45, 114, 0.1) 100%);
+}
+
+.tariff-card__relevant {
+  margin-top: auto;
+}
+
+.tariff-card__relevant-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
 }
 
 .tariff-card__terminal-icon--info:hover {

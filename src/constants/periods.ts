@@ -1,6 +1,5 @@
 import type { PeriodOption } from '@/types/tariff';
 
-/** Мапінг period key з API → підпис у UI (уточни за Figma) */
 export const PERIOD_LABELS: Record<string, string> = {
   '-50': 'Day',
   '1': '1 month',

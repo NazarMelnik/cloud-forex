@@ -1,5 +1,4 @@
 import { DATACENTER_IDS } from '@/constants/datacenters';
-import { PRICELIST_FUNC } from '@/constants/api';
 import type { PricelistElem, PricelistResponse } from '@/types/api';
 import type { DatacenterId, TariffPlan } from '@/types/tariff';
 import { apiPost } from './client';
@@ -50,7 +49,7 @@ export function parsePricelistResponse(data: PricelistResponse): TariffPlan[] {
 
 export async function fetchPricelist(): Promise<TariffPlan[]> {
   const data = await apiPost<PricelistResponse>({
-    func: PRICELIST_FUNC,
+    func: import.meta.env.VITE_PRICELIST_FUNC,
     out: 'json',
     lang: 'en',
     page: '1',

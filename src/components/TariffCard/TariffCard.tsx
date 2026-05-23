@@ -2,6 +2,13 @@
 import { buildOrderUrl } from '@/utils/buildOrderUrl';
 import { getPriceForPeriod } from '@/utils/getPriceForPeriod';
 
+// Constants
+import {
+  OPORTUNITIES,
+  RELEVANT,
+  SPEC_MAPPINGS
+} from './const';
+
 // Types
 import type {
   TariffDetail,
@@ -12,33 +19,14 @@ import type {
 import './TariffCard.css';
 
 interface IProps {
-  best: boolean;
+  index: number;
   tariff: TariffPlan;
   period: string;
 }
 
-const SPEC_MAPPINGS = [
-  {
-    sourceKey: 'CPU count',
-    shortLabel: 'TRM',
-  },
-  {
-    sourceKey: 'Memory',
-    shortLabel: 'RAM',
-  },
-  {
-    sourceKey: 'Disk space',
-    shortLabel: 'NVMe',
-  },
-  {
-    sourceKey: 'Port speed',
-    shortLabel: 'Mbps',
-  }
-];
-
 export function TariffCard(props: IProps) {
   const {
-    best,
+    index,
     tariff,
     period,
   } = props;
@@ -56,8 +44,8 @@ export function TariffCard(props: IProps) {
   const trmValue = detailsMap['CPU count']?.match(/\d+/)?.[0];
 
   return (
-    <article className={`tariff-card ${best ? 'tariff-card--best' : ''}`}>
-      {best ? (
+    <article className={`tariff-card ${index === 2 ? 'tariff-card--best' : ''}`}>
+      {index === 2 ? (
         <div className="tariff-card__best-label">
           Best Choice
         </div>
@@ -119,6 +107,33 @@ export function TariffCard(props: IProps) {
           <svg className='tariff-card__terminal-icon tariff-card__terminal-icon--info' width="16" height="16" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
             <path clipRule="evenodd" d="M7.99991 1.3335C11.6818 1.3335 14.6666 4.31825 14.6666 8.00015C14.6666 11.682 11.6818 14.6668 7.99991 14.6668C4.31803 14.6668 1.33325 11.6821 1.33325 8.00015C1.33325 4.31825 4.31803 1.3335 7.99991 1.3335ZM7.99991 10.1668C7.53963 10.1668 7.16653 10.5399 7.16653 11.0002C7.16653 11.4604 7.53966 11.8335 7.99988 11.8335C8.4601 11.8335 8.83322 11.4604 8.83322 11.0002C8.83322 10.5399 8.4601 10.1668 7.99988 10.1668M7.88863 4.25021C7.23972 4.25021 6.69431 4.427 6.25306 4.77959C5.73019 5.20196 5.46897 5.82572 5.46897 6.6514H6.88653V6.6419C6.88653 6.32687 6.95288 6.06846 7.08528 5.8669C7.26794 5.59596 7.56425 5.46034 7.97388 5.46034C8.22597 5.46034 8.44053 5.52653 8.61669 5.65865C8.83713 5.84171 8.94772 6.11881 8.94772 6.49065C8.94772 6.72387 8.89072 6.93171 8.77741 7.11459C8.68288 7.2784 8.53166 7.43897 8.32341 7.59662C7.88235 7.89909 7.59553 8.1985 7.46341 8.49484C7.34994 8.74059 7.29294 9.13131 7.29294 9.66684H8.62622C8.62622 9.31384 8.67313 9.04934 8.7681 8.87278C8.8436 8.72784 9.00132 8.57356 9.24082 8.40959C9.65691 8.10068 9.95285 7.81384 10.1294 7.54915C10.3436 7.23415 10.4509 6.86537 10.4509 6.443C10.4509 5.56768 10.0949 4.94681 9.38235 4.58112C8.95406 4.36059 8.45616 4.25015 7.88866 4.25015" fill="currentColor" />
           </svg>
+        </div>
+      </div>
+      <div className="tariff-card__oportunities">
+        <h4 className="tariff-card__oportunity-title">
+          ВОзможности
+        </h4>
+        {OPORTUNITIES?.[index]?.map((el: string) => (
+          <div className="tariff-card__oportunity-item">
+            <img className="tariff-card__oportunity-icon" src="/icons/checkmark.svg" alt="checkmark" />
+            <p className="tariff-card__oportunity-text">
+              {el}
+            </p>
+          </div>
+        ))}
+      </div>
+      <div className="tariff-card__relevant">
+        <h4 className="tariff-card__relevant-title">
+          Подходит для
+        </h4>
+        <div className="tariff-card__relevant-list">
+          {RELEVANT?.[index]?.map((el: string) => (
+            <div className="tariff-card__relevant-item">
+              <p className="tariff-card__relevant-text">
+                {el}
+              </p>
+            </div>
+          ))}
         </div>
       </div>
       <div className="tariff-card__actions">
