@@ -1,0 +1,37 @@
+.datacenter-switcher {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  padding: 6px 4px;
+  border-radius: 10px;
+  border: 1px solid #99999933;
+  width: max-content;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(153, 153, 153, 0.1) 100%);
+}
+
+.datacenter-switcher__btn {
+  padding: 12px 10px;
+  cursor: pointer;
+  font-size: 16px;
+  line-height: 18px;
+  color: #BEACC7;
+  display: flex;
+  gap: 4px;
+  transition: all 0.3s ease;
+  align-items: center;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  background: transparent;
+}
+
+.datacenter-switcher__flag {
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+}
+
+.datacenter-switcher__btn--active {
+  border: 1px solid #000000;
+  background: linear-gradient(86.53deg, #B3B6C8 0%, #FFFFFF 100%);
+  color: #1E132D;
+}

@@ -1,0 +1,58 @@
+.pricing-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1;
+}
+
+.pricing-page__header {
+  margin-bottom: 32px;
+}
+
+.pricing-page__title {
+  font-size: 54px;
+  line-height: 100%;
+  color: var(--white);
+}
+
+.pricing-page__subtitle {
+  margin: 8px 0 0;
+  color: #727272;
+}
+
+.pricing-page__controls {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 36px;
+}
+
+.pricing-page__control {
+  display: flex;
+  min-width: 286px;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.pricing-page__label {
+  font-size: 12px;
+  text-transform: uppercase;
+  line-height: 100%;
+  color: #FFF599;
+}
+
+.pricing-page__status {
+  color: #727272;
+}
+
+.pricing-page__status--error {
+  color: #b42318;
+}
+
+.pricing-page__status button {
+  margin-left: 8px;
+  text-decoration: underline;
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: inherit;
+}

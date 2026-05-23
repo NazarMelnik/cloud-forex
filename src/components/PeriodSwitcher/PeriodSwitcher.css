@@ -1,0 +1,109 @@
+.period-select {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  min-width: 180px;
+}
+
+.period-select.open {
+  overflow: visible;
+}
+
+.period-select__trigger {
+  position: relative;
+  display: flex;
+  min-height: 58px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(153, 153, 153, 0.1) 100%);
+  color: var(--white, #fff);
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.period-select__trigger:hover {
+  border-color: var(--pink);
+}
+
+.period-select__trigger--open,
+.period-select__trigger:focus-visible {
+  border-color: #7c5cff;
+  outline: none;
+}
+
+.period-select__value {
+  font-size: 16px;
+  line-height: 140%;
+}
+
+.period-select__icon {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: all 0.1s ease;
+}
+
+.period-select__trigger--open .period-select__icon {
+  transform: rotate(-180deg) translateY(50%);
+}
+
+.period-select__dropdown {
+  position: absolute;
+  z-index: 20;
+  top: calc(100% + 6px);
+  left: 0;
+  opacity: 0;
+  right: 0;
+  padding: 16px;
+  list-style: none;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 10px;
+  background: #1e1228;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45);
+  max-height: 240px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  transition: all 0.3s ease;
+  pointer-events: none;
+  visibility: hidden;
+}
+
+.period-select.open .period-select__dropdown {
+  opacity: 1;
+  pointer-events: all;
+  visibility: visible;
+}
+
+.period-select__option {
+  display: block;
+  width: 100%;
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--white, #fff);
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.period-select__option:hover {
+  color: var(--pink);
+}
+
+.period-select__option--selected {
+  color: var(--pink);
+}
+
+.period-select__option:focus-visible {
+  outline: 2px solid #a78bfa;
+  outline-offset: -2px;
+}

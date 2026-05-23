@@ -1,0 +1,31 @@
+:root {
+  --white: #fff;
+  --pink: #FF4AB7;
+}
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+  max-width: 1440px;
+}
+
+body {
+  color: #17212a;
+  font-size: 14px;
+  line-height: 110%;
+  background: radial-gradient(45.44% 58.3% at 50% 17.62%, #261433 0%, #160720 100%);
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.font--500 {
+  font-weight: 500;
+}
+
+.color--pink {
+  color: var(--pink);
+}
