@@ -98,8 +98,8 @@ export function TariffCard(props: IProps) {
                       key={detail.name}
                       className="tariff-card__details-list-item"
                     >
-                      <p className='tariff-card__details-tooltip-name'>{detail.name}:</p>
-                      <p className='tariff-card__details-tooltip-value'>{detail.value}</p>
+                      <p className='tariff-card__details-tooltip-name'>{detail?.name}:</p>
+                      <p className='tariff-card__details-tooltip-value'>{detail?.value}</p>
                     </li>
                   ))}
                 </ul>
@@ -107,6 +107,7 @@ export function TariffCard(props: IProps) {
             </div>
           </li>
         </ul>
+        <img className='tariff-card__terminals-icon' src={`/icons/${trmValue}-terminals.svg`} alt="teminal-icon" />
       </header>
       <div className="tariff-card__terminal-wrapper">
         <div className='tariff-card__terminal-content'>
